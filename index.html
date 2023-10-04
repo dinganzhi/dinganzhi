@@ -3,15 +3,17 @@
 <head>
     <link rel="stylesheet" href="./header.css">
     <script>
-        //Ã¿¸ôÒ»Ãë×Ô¶¯Ö´ĞĞ·½·¨£¨¶à´ÎÖ´ĞĞ£©
+        //æ¯éš”ä¸€ç§’è‡ªåŠ¨æ‰§è¡Œæ–¹æ³•ï¼ˆå¤šæ¬¡æ‰§è¡Œï¼‰
         var c = 0;
         function showLogin() {
+            c = c + 1
+            if (c = 13) {
+                c = 1
+            }
             loadXMLDoc();
-            var text = loadXMLStr("type" + c++);
-            alert(text);
         }
-        //setInterval·½·¨»ò×Ö·û´® £¬ºÁÃë£¬²ÎÊıÊı×é£¨·½·¨µÄ£©)
-        setInterval("showLogin()", "5000");//showLogin()º¯ÊıÃûÒ»¶¨Òª´øÀ¨ºÅ
+        //setIntervalæ–¹æ³•æˆ–å­—ç¬¦ä¸² ï¼Œæ¯«ç§’ï¼Œå‚æ•°æ•°ç»„ï¼ˆæ–¹æ³•çš„ï¼‰)
+        setInterval("showLogin()", "5000");//showLogin()å‡½æ•°åä¸€å®šè¦å¸¦æ‹¬å·
         function loadXMLDoc() {
             if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
                 xmlhttp = new XMLHttpRequest();
@@ -23,12 +25,8 @@
             xmlhttp.send(xmlhttp.open("GET", "./text.xml", false));
             xmlDoc = xmlhttp.responseXML;
 
-            document.getElementById("to").innerHTML =
-                xmlDoc.getElementsByTagName("type1")[0].childNodes[0].nodeValue;
-            document.getElementById("from").innerHTML =
-                xmlDoc.getElementsByTagName("type2")[0].childNodes[0].nodeValue;
-            document.getElementById("message").innerHTML =
-                xmlDoc.getElementsByTagName("type3")[0].childNodes[0].nodeValue;
+            document.getElementById("splashtext").innerHTML =
+                xmlDoc.getElementsByTagName("type" + c)[0].childNodes[0].nodeValue;
         }
     </script>
         <style>
@@ -71,17 +69,15 @@
 </head >
             <body>
                 <ul>
-                    <li><a class="active" href="#home">Ö÷Ò³</a></li>
-                    <li><a href="#news">ÏÂÔØ</a></li>
-                    <li><a href="#contact">ÈÕÖ¾ºÍbug</a></li>
-                    <li><a href="#about">¹ØÓÚ</a></li>
+                    <li><a class="active" href="#home">ä¸»é¡µ</a></li>
+                    <li><a href="#news">ä¸‹è½½</a></li>
+                    <li><a href="#contact">æ—¥å¿—å’Œbug</a></li>
+                    <li><a href="#about">å…³äº</a></li>
                 </ul>
                 
                 <div class="custom-font">
                     <h1>Minecraft</h1>
-                    <p id="to"></p>
-                    <p id="from"></p>
-                    <p id="message"></p>
+                    <p id="splashtext" class="custom-font" style="color:yellow">çœ‹ç€è¿™è¡Œæ–‡å­—ï¼Œå®ƒå¾…ä¼šå°±ä¼šå˜æ ·ã€‚</p>
                 </div>
             </body>
 </html>
