@@ -1,10 +1,87 @@
 <!DOCTYPE HTML>
-  <html>
-    <head>
-      <meta charset="UTF-8">
-      <title>鎴戞槸鏂囨湰114514</title>
-    </head>
-    <body>
-      <p>鎴戞槸鏂囨湰1919810</p>
-    </body>
-  </html>
+<html>
+<head>
+    <link rel="stylesheet" href="./header.css">
+    <script>
+        //每隔一秒自动执行方法（多次执行）
+        var c = 0;
+        function showLogin() {
+            loadXMLDoc();
+            var text = loadXMLStr("type" + c++);
+            alert(text);
+        }
+        //setInterval方法或字符串 ，毫秒，参数数组（方法的）)
+        setInterval("showLogin()", "5000");//showLogin()函数名一定要带括号
+        function loadXMLDoc() {
+            if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+                xmlhttp = new XMLHttpRequest();
+            }
+            else {// code for IE6, IE5
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            
+            xmlhttp.send(xmlhttp.open("GET", "./text.xml", false));
+            xmlDoc = xmlhttp.responseXML;
+
+            document.getElementById("to").innerHTML =
+                xmlDoc.getElementsByTagName("type1")[0].childNodes[0].nodeValue;
+            document.getElementById("from").innerHTML =
+                xmlDoc.getElementsByTagName("type2")[0].childNodes[0].nodeValue;
+            document.getElementById("message").innerHTML =
+                xmlDoc.getElementsByTagName("type3")[0].childNodes[0].nodeValue;
+        }
+    </script>
+        <style>
+            body {
+            background-image: url(https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fsafe-img.xhscdn.com%2Fbw1%2F5a9cddf0-4bc4-4235-87ba-1233d67ae302%3FimageView2%2F2%2Fw%2F1080%2Fformat%2Fjpg&refer=http%3A%2F%2Fsafe-img.xhscdn.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1698634139&t=d82c33f78b21bb9f4555ae701a9b5281);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: left top;
+            position: absolute;
+            overflow: hidden;
+            }
+            audio {
+                width: 300px;
+            height: 30px;
+            font-size: smaller;
+            margin-left: 320px;
+            }
+            .center {
+            text-align: center;
+            margin: auto;
+            margin-bottom: auto;
+            position: center;
+            outline-width: thick;
+            text-align-last: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 300px;
+            }
+            @font-face {
+            font-family: 'Mojangles';
+            src: url('mojangles.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            }
+            .custom-font {
+            font-family: 'Mojangles', sans-serif;
+            }
+        </style>
+</head >
+            <body>
+                <ul>
+                    <li><a class="active" href="#home">主页</a></li>
+                    <li><a href="#news">下载</a></li>
+                    <li><a href="#contact">日志和bug</a></li>
+                    <li><a href="#about">关于</a></li>
+                </ul>
+                
+                <div class="custom-font">
+                    <h1>Minecraft</h1>
+                    <p id="to"></p>
+                    <p id="from"></p>
+                    <p id="message"></p>
+                </div>
+            </body>
+</html>
