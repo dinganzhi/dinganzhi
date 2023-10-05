@@ -6,9 +6,11 @@
         //每隔一秒自动执行方法（多次执行）
         var c = 0;
         function showLogin() {
-            c = c + 1
             if (c = 13) {
                 c = 1
+            }
+            else {
+                c = c + 1
             }
             loadXMLDoc();
         }
