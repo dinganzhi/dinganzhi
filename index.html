@@ -3,19 +3,6 @@
 <head>
     <link rel="stylesheet" href="./header.css">
     <script>
-        //每隔一秒自动执行方法（多次执行）
-        var c = 0;
-        function showLogin() {
-            if (c = 13) {
-                c = 1
-            }
-            else {
-                c = c + 1
-            }
-            loadXMLDoc();
-        }
-        //setInterval方法或字符串 ，毫秒，参数数组（方法的）)
-        setInterval("showLogin()", "5000");//showLogin()函数名一定要带括号
         function loadXMLDoc() {
             if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
                 xmlhttp = new XMLHttpRequest();
@@ -27,8 +14,20 @@
             xmlhttp.send(xmlhttp.open("GET", "./text.xml", false));
             xmlDoc = xmlhttp.responseXML;
 
-            document.getElementById("splashtext").innerHTML =
-                xmlDoc.getElementsByTagName("type" + c)[0].childNodes[0].nodeValue;
+            document.getElementById("splashtext").innerHTML = xmlDoc.getElementsByTagName("type" + c)[0].childNodes[0].nodeValue;
+        }
+        //每隔一秒自动执行方法（多次执行）
+        //setInterval方法或字符串 ，毫秒，参数数组（方法的）)
+        setInterval("showLogin()", "5000");//showLogin()函数名一定要带括号
+        var c = 0;
+        function showLogin() {
+            if (c >= 13) {
+                c = 1
+            }
+            else {
+                c = c + 1
+            }
+            loadXMLDoc();
         }
     </script>
         <style>
