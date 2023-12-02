@@ -3,31 +3,77 @@
 <head>
     <link rel="stylesheet" href="./header.css">
     <script>
-        function loadXMLDoc() {
+        //每隔一秒自动执行方法（多次执行）
+        //setInterval方法或字符串 ，毫秒，参数数组（方法的）)
+        /*                            _ooOoo_
+         *                           o8888888o
+         *                           88" . "88
+         *                           (| -_- |)
+         *                            O\ = /O
+         *                        ____/`---'\____
+         *                      .   ' \\| |// `.
+         *                       / \\||| : |||// \
+         *                    / _||||| -卍- |||||- \
+         *                       | | \\\ - /// | |
+         *                     | \_| ''\---/'' | |
+         *                      \ .-\__ `-` ___/-. /
+         *                   ___`. .' /--.--\ `. . __
+         *                ."" '< `.___\_<|>_/___.' >'"".
+         *               | | : `- \`.;`\ _ /`;.`/ - ` : | |
+         *                 \ \ `-. \_ __\ /__ _/ .-` / /
+         *         ======`-.____`-.___\_____/___.-`____.-'======
+         *                            `=---='
+         *
+         *         .............................................
+         *                  佛祖镇楼                  BUG辟易
+         *          佛曰:
+         *                  写字楼里写字间，写字间里程序员；
+         *                  程序人员写程序，又拿程序换酒钱。
+         *                  酒醒只在网上坐，酒醉还来网下眠；
+         *                  酒醉酒醒日复日，网上网下年复年。
+         *                  但愿老死电脑间，不愿鞠躬老板前；
+         *                  奔驰宝马贵者趣，公交自行程序员。
+         *                  别人笑我忒疯癫，我笑自己命太贱；
+         *                  不见满街漂亮妹，哪个归得程序员？
+         */
+        //bug我曹尼玛全家SB趋势你个没nz的**************已屏蔽****************
+        //GitHub我要s了你全家哪年你给我弄动态网站我给你磕头拜年我cnmd
+        setInterval("splashtext()", "5000");//splashtext()函数名一定要带括号   
+        var c = 0;
+        function splashtext() {
+            if (c == 13) {
+                c = 1
+            }
+            else {
+                c = c + 1
+            }
             if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
                 xmlhttp = new XMLHttpRequest();
             }
             else {// code for IE6, IE5
                 xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
             }
-            
+
             xmlhttp.send(xmlhttp.open("GET", "./text.xml", false));
             xmlDoc = xmlhttp.responseXML;
 
             document.getElementById("splashtext").innerHTML = xmlDoc.getElementsByTagName("type" + c)[0].childNodes[0].nodeValue;
         }
-        //每隔一秒自动执行方法（多次执行）
-        //setInterval方法或字符串 ，毫秒，参数数组（方法的）)
-        setInterval("showLogin()", "5000");//showLogin()函数名一定要带括号   
-        var c = 0;
-        function showLogin() {
-            if (c >= 13) {
-                c = 1
+        setInterval("splashtext_size()", "1");
+        var splash_text_size = 16.00;
+        var grow = true;
+        function splashtext_size() {
+            if (splash_text_size >= 18.00) {
+                grow = false;
+            } else if (splash_text_size <= 16.00){
+                grow = true;
             }
-            else {
-                c = c + 1
+            if (grow == true) {
+                splash_text_size = splash_text_size + 0.04;
+            } else {
+                splash_text_size = splash_text_size - 0.04;
             }
-            loadXMLDoc();
+            document.getElementById("growtext").style = "color: yellow; transform: rotateZ(-5deg); font-size:" + splash_text_size + "px;";
         }
     </script>
         <style>
@@ -66,19 +112,29 @@
             .custom-font {
             font-family: 'Mojangles', sans-serif;
             }
+            .menu_audio{
+            width: 275px;
+            height: 30px;
+            float: left;
+            }
         </style>
 </head >
-            <body>
-                <ul>
-                    <li><a class="active" href="#home">主页</a></li>
-                    <li><a href="#news">下载</a></li>
-                    <li><a href="#contact">日志和bug</a></li>
-                    <li><a href="#about">关于</a></li>
-                </ul>
-                
-                <div class="custom-font">
-                    <h1>Minecraft</h1>
-                    <p id="splashtext" class="custom-font" style="color:yellow">看着这行文字，它待会就会变样。</p>
-                </div>
-            </body>
+<body>
+    <ul>
+        <li><a class="active" href="#home">主页</a></li>
+        <li><a href="#news">下载</a></li>
+        <li><a href="#contact">日志和bug</a></li>
+        <li><a href="#about">关于</a></li>
+    </ul>
+    <audio controls autoplay class="menu_audio" style="margin-left: 300px">
+        <source src="8p63d-hvuks.mp3" type="audio/mpeg">
+        <source src="d6eyk-zfmag.ogg" type="audio/ogg">
+        <embed height="50" width="100" src="8p63d-hvuks.mp3">
+    </audio>
+
+    <div class="custom-font" style="margin-top: 50px;">
+        <h1>Minecraft</h1>
+        <div type="text" id="growtext" class="custom-font" style="color: yellow; transform: rotateZ(-5deg); font-size: 16px;">看着这行文字，它待会就会变样。</div>
+    </div>
+</body>
 </html>
