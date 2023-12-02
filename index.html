@@ -57,7 +57,7 @@
             xmlhttp.send(xmlhttp.open("GET", "./text.xml", false));
             xmlDoc = xmlhttp.responseXML;
 
-            document.getElementById("splashtext").innerHTML = xmlDoc.getElementsByTagName("type" + c)[0].childNodes[0].nodeValue;
+            document.getElementById("growtext").innerHTML = xmlDoc.getElementsByTagName("type" + c)[0].childNodes[0].nodeValue;
         }
         setInterval("splashtext_size()", "1");
         var splash_text_size = 16.00;
