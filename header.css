@@ -8,6 +8,7 @@ ul.header_menu {
     top: 0;
     width: 100%;
     right: 0;
+    min-height: 48px;
 }
 
 li {
@@ -16,17 +17,38 @@ li {
 
 li a {
     display: block;
-    color: white;
+    color: rgba(255, 255, 255, 0.5);
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    transition: background-color .8s;
+    transition: color .5s;
 }
 
 li a:hover:not(.active) {
-    background-color: #111;
+    color: #ffffff;
 }
 
 .active {
-    background-color: #00b3ff;
+    background-color: #00b3ff !important;
+    color: white !important;
+    font-weight: 1000 !important;
+}
+
+.dropdown-content {
+    display: none;
+
+}
+
+.dropdown:hover .dropdown-content {
+    display: inline-block;
+    width: 150px !important;
+    height: auto !important;
+    text-decoration: none;
+    background: none;
+    margin-left: -44px;
+}
+
+.lrborder {
+    border-left: 3px #ffffff !important;
+    border-right: 3px #ffffff !important;
 }

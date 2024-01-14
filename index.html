@@ -1,8 +1,9 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <link rel="stylesheet" href="./header.css">
-    <script type="script" src="/splashtext.js"></script>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/header.css" />
+    <script src="/splashtext.js"></script>
         <style>
             body {
             background-image: url(https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fsafe-img.xhscdn.com%2Fbw1%2F5a9cddf0-4bc4-4235-87ba-1233d67ae302%3FimageView2%2F2%2Fw%2F1080%2Fformat%2Fjpg&refer=http%3A%2F%2Fsafe-img.xhscdn.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1698634139&t=d82c33f78b21bb9f4555ae701a9b5281);
@@ -29,15 +30,6 @@
             align-items: center;
             justify-content: center;
             width: 300px;
-            }
-            @font-face {
-            font-family: 'Mojangles';
-            src: url('mojangles.ttf') format('truetype');
-            font-weight: normal;
-            font-style: normal;
-            }
-            .custom-font {
-            font-family: 'Mojangles', sans-serif;
             }
             .menu_audio{
             width: 275px;
@@ -82,21 +74,45 @@
 <body>
     <ul class="header_menu">
         <li><a class="active" href="#home">主页</a></li>
-        <li><a href="#news">下载</a></li>
-        <li><a href="#contact">日志和bug</a></li>
+        <li class="dropdown" style="width: 64px !important;">
+            <a href="#news">下载</a>
+            <div class="dropdown-content">
+                <a href="http://www.runoob.com">MC音乐Mod</a>
+                <a href="http://www.runoob.com">MC进度Mod</a>
+                <a href="http://www.runoob.com">MCSA</a>
+            </div>
+        </li>
+        <li class="dropdown"  style="width: 110.5px !important;">
+            <a href="#contact">日志和bug</a>
+            <div class="dropdown-content" style="margin-left: -20px !important;">
+                <a href="http://www.runoob.com">最新版本</a>
+                <a href="http://www.runoob.com">历史日志</a>
+                <a href="https://dinganzhi.github.io/mc.music.advancements.org/link/githubissue/">GitHub Issue</a>
+                <a href="http://www.runoob.com">漏洞列表</a>
+            </div>
+        </li>
         <li><a href="#contact">网页设置</a></li>
-        <li><a href="#about" style="border-right-style: solid; border-width: 3px;">关于</a></li>
+        <li class="dropdown" style="width: 64px !important;">
+            <a href="#about">关于</a>
+            <div class="dropdown-content">
+                <a href="http://www.runoob.com">网页制作</a>
+                <a href="http://www.runoob.com">应用制作</a>
+                <a href="http://www.runoob.com">模组制作</a>
+                <a href="http://www.runoob.com">鸣谢名单</a>
+            </div>
+        </li>
     </ul>
     <audio controls autoplay class="menu_audio" style="margin-left: 400px">
         <source src="8p63d-hvuks.mp3" type="audio/mpeg">
         <source src="d6eyk-zfmag.ogg" type="audio/ogg">
         <embed height="50" width="100" src="8p63d-hvuks.mp3">
     </audio>
+
     <div class="column" style="margin: 5px;">
         <h1 class="custom-font" style="margin-top: 55px;">Minecraft</h1>
     </div>
     <div class="width_warn center">
-        <pre class="center custom-font" style="font-size: 14px;">屏幕宽度过小，已修改网页布局 | <a href="https://dinganzhi.github.io/mc.music.advancements.org/question/#0001">查看有关此信息的帮助</a></pre>
+        <pre class="center custom-font" style="font-size: 14px;">屏幕宽度过小，已修改网页布局 | <a href="https://dinganzhi.github.io/mc.music.advancements.org/question/#0001/">查看有关此信息的帮助</a></pre>
     </div>
 </body>
 </html>

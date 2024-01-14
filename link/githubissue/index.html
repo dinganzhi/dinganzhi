@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="/font.css" />
+        <script>
+            if (window.confirm("即将跳转到站外链接(https://)，你确实要访问吗？") == true)
+            {
+                location.replace("http://www.baidu.com/");
+            }
+            else
+            {
+                location.replace("D:Github/mc.music.advancements.org/link/message.html");
+            }
+        </script>
+    </head>
+    <body>
+        <script>
+            function message()
+            {
+                document.getElementById("message").innerHTML = "已取消操作执行";
+            }
+        </script>
+        <p id="message" class="custom-font"></p>
+    </body>
+</html>

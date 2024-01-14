@@ -1,0 +1,9 @@
+.button {
+    background-color: #00aaff; /* 设置背景色 */
+    border: none; /* 去除默认边框 */
+    padding: 10px 20px; /* 设置内边距 */
+    font-size: 16px; /* 设置字体大小 */
+    text-align: center; /* 文本居中对齐 */
+    cursor: pointer; /* 鼠标移到按钮上时显示手型光标 */
+    transition: all 0.3s ease; /* 添加过渡效果 */
+}
