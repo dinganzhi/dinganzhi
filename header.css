@@ -21,7 +21,7 @@ li a {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    transition: color .5s;
+    transition: background-color .5s;
 }
 
 li a:hover:not(.active) {
