@@ -17,7 +17,7 @@ li {
 
 li a {
     display: block;
-    color: rgba(255, 255, 255, 0.5);
+    color: #ffffff;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -25,7 +25,7 @@ li a {
 }
 
 li a:hover:not(.active) {
-    color: #ffffff;
+    background-color: #000000;
 }
 
 .active {
@@ -46,9 +46,4 @@ li a:hover:not(.active) {
     text-decoration: none;
     background: none;
     margin-left: -44px;
-}
-
-.lrborder {
-    border-left: 3px #ffffff !important;
-    border-right: 3px #ffffff !important;
 }
